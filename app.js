@@ -1,5 +1,5 @@
 (()=>{
-const BUILD='20260927-2';
+const BUILD='20260927-3';
 const trips=Array.isArray(window.TRAVEL_COMMAND_CENTER_TRIPS)&&window.TRAVEL_COMMAND_CENTER_TRIPS.length?window.TRAVEL_COMMAND_CENTER_TRIPS:[window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP].filter(Boolean);
 const requestedTrip=new URLSearchParams(location.search).get('trip');
 const selectedTrip=trips.find(trip=>trip.id===requestedTrip);
@@ -35,7 +35,7 @@ function shell(hero,content,dock=true){
 
 function renderOverview(){
   const hero=`<header class="hero overview-hero" id="top" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=88&w=1600')"><button class="button refresh-button" id="refreshDashboard" type="button"><span class="refresh-icon">↻</span> Refresh</button><span class="brand-chip">Mike's Travel Command Center</span><h1>Where are we<br>going next?</h1><p class="hero-copy">Every kind of journey, in one place—from city breaks and cruises to international adventures.</p></header>`;
-  const content=`<section class="panel status-panel overview-panel"><div class="kicker">TRAVEL OVERVIEW</div><h2>Choose a journey to open its full plan.</h2><p>Trips stay separate and easy to scan. Select one whenever you want its itinerary, bookings, timeline and destination tools.</p><div class="offline-row" id="offlineStatus"><span class="offline-dot"></span><span>Preparing offline access…</span></div></section><div class="section-title" id="trips">Upcoming journeys <span>${trips.length} planned</span></div>${tripCards()}<section class="panel overview-note"><span aria-hidden="true">✈️</span><div><b>Award flights are ready when you are.</b><p>Use the Award Flights tool below to explore point redemptions for a future trip.</p></div></section><div class="section-title" id="archives">Archived trips</div>${archiveCards()}`;
+  const content=`<section class="panel status-panel overview-panel"><div class="kicker">TRAVEL OVERVIEW</div><h2>Choose a journey to open its full plan.</h2><p>Trips stay separate and easy to scan. Select one whenever you want its itinerary, bookings, timeline and destination tools.</p><div class="offline-row" id="offlineStatus"><span class="offline-dot"></span><span>Preparing offline access…</span></div></section>${tripCards()}<section class="panel overview-note"><span aria-hidden="true">✈️</span><div><b>Award flights are ready when you are.</b><p>Use the Award Flights tool below to explore point redemptions for a future trip.</p></div></section><div class="section-title" id="archives">Archived trips</div>${archiveCards()}`;
   shell(hero,content);
 }
 
