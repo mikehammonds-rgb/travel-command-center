@@ -33,3 +33,11 @@ These identifiers are also recorded in `site.config.json`. If a request names an
 ## Privacy note
 
 The repository is public even when a deployment requires Vercel sign-in. The validator blocks obvious private field names and identifier-shaped text, except the owner's explicit `publicTravelParty` cruise-name and reservation-number disclosure. Existing price/payment wording is fingerprinted in `privacy-baseline.json` and reported as warnings; new or changed wording of that kind fails validation. The baseline is not an endorsement of those older details. It cannot prove that every free-text value is share-safe, so review warnings before publishing and do not add more without an explicit privacy decision.
+
+## Seats.aero award availability
+
+Award-flight availability is available through the server-only `GET /api/award-search` endpoint. It uses Seats.aero's Pro cached-search API; it does not use the commercial-only Live Search API. See [AI_HANDOFF.md](AI_HANDOFF.md) for the complete request contract and change guidance.
+
+Before deploying the endpoint, create `SEATS_AERO_API_KEY` in **Vercel → travel-command-center → Settings → Environment Variables**. Add the regenerated Seats.aero key to Production and Preview (and Development if using `vercel dev`), then redeploy. The value is a secret: do not use a `NEXT_PUBLIC_` prefix, commit it, or paste it into documentation. For a local check, put the key only in an untracked `.env.local`; `.env.example` intentionally contains no value.
+
+Successful searches are cached for five minutes to conserve the Pro API allocation. The response exposes the remaining daily request count as `X-Award-Search-Remaining`, but never returns the credential.
