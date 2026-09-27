@@ -1,8 +1,9 @@
 (()=>{
-const BUILD='20260927-1';
+const BUILD='20260927-2';
 const trips=Array.isArray(window.TRAVEL_COMMAND_CENTER_TRIPS)&&window.TRAVEL_COMMAND_CENTER_TRIPS.length?window.TRAVEL_COMMAND_CENTER_TRIPS:[window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP].filter(Boolean);
 const requestedTrip=new URLSearchParams(location.search).get('trip');
-const active=trips.find(trip=>trip.id===requestedTrip)||trips.slice().sort((a,b)=>a.start.localeCompare(b.start))[0];
+const selectedTrip=trips.find(trip=>trip.id===requestedTrip);
+const active=selectedTrip||{id:null};
 const archives=Array.isArray(window.TRAVEL_COMMAND_CENTER_ARCHIVES)?window.TRAVEL_COMMAND_CENTER_ARCHIVES:[];
 const app=document.getElementById('app');
 const e=value=>String(value??'').replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
@@ -30,6 +31,12 @@ function shell(hero,content,dock=true){
   const displayContent=content.replace(archiveMarkup,archiveSection());
   app.innerHTML=`<div class="site-header"><a class="site-brand" href="#top" aria-label="Travel Command Center home"><span class="brand-mark">✦</span><span><strong>Travel Command Center</strong><small>Every journey, in one place</small></span></a><a class="header-link" href="${trips.length>1?'#trips':'#archives'}">${trips.length>1?'All trips':'Past trips'} <span aria-hidden="true">↗</span></a></div>${hero}<main class="main">${displayContent}<div class="footer">Travel Command Center · upcoming trips organized · every journey preserved</div></main>${dock?`<nav class="tool-dock" aria-label="Quick tools"><div class="dock-inner"><a href="#top"><span>🏠</span>Home</a><a href="#archives"><span>🗃️</span>Past Trips</a><button type="button" data-tool="translate"><span>🌐</span>Translate</button><button class="accent-tool" type="button" data-tool="hungry"><span>🍜</span>Hungry?</button></div></nav>`:''}`;
   wireCommon();
+}
+
+function renderOverview(){
+  const hero=`<header class="hero overview-hero" id="top" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=88&w=1600')"><button class="button refresh-button" id="refreshDashboard" type="button"><span class="refresh-icon">↻</span> Refresh</button><span class="brand-chip">Mike's Travel Command Center</span><h1>Where are we<br>going next?</h1><p class="hero-copy">Every kind of journey, in one place—from city breaks and cruises to international adventures.</p></header>`;
+  const content=`<section class="panel status-panel overview-panel"><div class="kicker">TRAVEL OVERVIEW</div><h2>Choose a journey to open its full plan.</h2><p>Trips stay separate and easy to scan. Select one whenever you want its itinerary, bookings, timeline and destination tools.</p><div class="offline-row" id="offlineStatus"><span class="offline-dot"></span><span>Preparing offline access…</span></div></section><div class="section-title" id="trips">Upcoming journeys <span>${trips.length} planned</span></div>${tripCards()}<section class="panel overview-note"><span aria-hidden="true">✈️</span><div><b>Award flights are ready when you are.</b><p>Use the Award Flights tool below to explore point redemptions for a future trip.</p></div></section><div class="section-title" id="archives">Archived trips</div>${archiveCards()}`;
+  shell(hero,content);
 }
 
 function renderEmpty(){
@@ -86,7 +93,7 @@ function awardFlights(){const el=modal('Award flights ✈️',`<p class="tool-no
 function awardCard(item){const cabins=[['Y','Economy'],['W','Premium economy'],['J','Business'],['F','First']].filter(([code])=>item[`${code}Available`]).map(([code,label])=>{const points=item[`${code}MileageCost`],taxes=item[`${code}TotalTaxes`],seats=Number(item[`${code}RemainingSeats`]),cost=points?`${Number(points).toLocaleString()} pts`:'';return`<span class="award-cabin"><b>${label}</b>${cost?`<small>${e(cost)}${Number(taxes)>0?` + $${(Number(taxes)/100).toFixed(2)}`:''}</small>`:''}${seats>0?`<small>${seats} seat${seats===1?'':'s'} shown</small>`:''}</span>`}).join(''),route=item.Route||{},airlines=item.YAirlines||item.JAirlines||item.WAirlines||item.FAirlines||'';return`<article class="result-card award-card"><div class="award-card-head"><span>${e(item.Date||'Date unavailable')}</span><b>${e(route.OriginAirport||'')} → ${e(route.DestinationAirport||'')}</b><small>${e(item.Source||route.Source||'Award program')}${airlines?` · ${e(airlines)}`:''}</small></div>${cabins?`<div class="award-cabins">${cabins}</div>`:'<p>No cabin price is listed for this result.</p>'}</article>`}
 async function offline(){const row=document.getElementById('offlineStatus');if(!row)return;if(!('serviceWorker'in navigator)){row.lastElementChild.textContent='Offline mode is unavailable in this browser';return}const paint=ready=>{row.classList.toggle('ready',ready&&navigator.onLine);row.classList.toggle('offline',!navigator.onLine);row.lastElementChild.textContent=!navigator.onLine?(ready?'Offline mode · saved trip ready':'Offline · open once online to save'):ready?'Offline ready · dashboard saved on this phone':'Saving dashboard for offline use…'};try{await navigator.serviceWorker.register(`/sw.js?v=${BUILD}`,{scope:'/'});await navigator.serviceWorker.ready;paint(true)}catch{paint(false)}window.addEventListener('online',()=>paint(true));window.addEventListener('offline',()=>paint(true))}
 
-if(active)renderActive(active);else renderEmpty();
+if(selectedTrip)renderActive(active);else if(trips.length)renderOverview();else renderEmpty();
 enableAwardTool();
 offline();
 })();
