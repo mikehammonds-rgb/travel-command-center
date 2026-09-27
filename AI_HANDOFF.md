@@ -20,7 +20,7 @@
 
 Example: `/api/award-search?origin=MCO,TPA&destination=LHR,CDG&startDate=2026-10-10&endDate=2026-10-18&cabins=business&take=50&orderBy=lowest_mileage`
 
-The endpoint returns `{ source, results }`, where `results` is Seats.aero's JSON payload. It validates input before making the upstream request, maps provider errors to non-secret error codes, and caches successful responses for five minutes to preserve the Pro daily allowance. If an interface is added later, call this same-origin endpoint—never Seats.aero directly from `app.js`.
+The endpoint returns `{ source, results }`, where `results` is Seats.aero's JSON payload. It validates input before making the upstream request, maps provider errors to non-secret error codes, and caches successful responses for five minutes to preserve the Pro daily allowance. The dashboard's `Award Flights` button calls this same-origin endpoint; never call Seats.aero directly from `app.js`.
 
 ## Change and verification checklist
 
