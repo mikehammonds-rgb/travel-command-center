@@ -1,0 +1,12 @@
+{
+  "name": "travel-command-center",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check-release.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
