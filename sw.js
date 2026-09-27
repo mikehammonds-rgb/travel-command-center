@@ -1,4 +1,4 @@
-const VERSION='20260923-6';
+const VERSION='20260927-1';
 const CACHE=`travel-command-center-${VERSION}`;
 const ARCHIVE='/archived-trips/china-2026-08-30-to-2026-09-13/';
 const CORE=[
