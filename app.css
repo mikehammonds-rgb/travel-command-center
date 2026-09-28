@@ -127,3 +127,6 @@ body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,Blin
 
 /* Mike Travel brand mark */
 .brand-mark.logo-mark{padding:0;overflow:hidden;background:#121212;border:1px solid #dca54a;box-shadow:0 4px 14px rgba(202,134,34,.3)}.brand-mark.logo-mark img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Mike Travel signature artwork */
+.hero:after{content:"";position:absolute;z-index:0;right:-4%;bottom:-31%;width:min(56vw,470px);aspect-ratio:1;background:url('/brand/mike-travel-logo.jpg') center/cover no-repeat;border-radius:50%;opacity:.46;mix-blend-mode:screen;filter:saturate(1.16) contrast(1.05);pointer-events:none}.hero:has(.brand-chip):after{box-shadow:0 0 56px rgba(237,172,67,.18)}.overview-hero:after{width:min(61vw,520px);right:-2%;bottom:-35%;opacity:.52}.hero h1,.hero-copy,.brand-chip,.hero-actions,.route-scroll,.refresh-button{z-index:1}@media(max-width:600px){.hero:after{width:78vw;right:-25%;bottom:23%;opacity:.31;mix-blend-mode:screen}.overview-hero:after{width:88vw;right:-29%;bottom:22%;opacity:.34}}
