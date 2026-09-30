@@ -8,10 +8,10 @@
   {"tripId":"wonder-birthday-cruise-2026-11","path":"cities[1].highlights[5].note","sha256":"c993b31a038c98d6f62c7dae824955fc37354cb77f37336486299f093957304c"},
   {"tripId":"wonder-birthday-cruise-2026-11","path":"transport[3].notes[2]","sha256":"16d12d303e3c7f0928e5f4821942a703d3bfad3c36ea0f053bdc3feebe3b8ff3"},
   {"tripId":"holiday-cruise-tahoe-2026","path":"phases[0].status","sha256":"952efbee9c10f69d6ba4b4bd1bea32522d7f65b79872ab9fe808f9ae78b8042c"},
-  {"tripId":"holiday-cruise-tahoe-2026","path":"readiness[0].items[0]","sha256":"0f6bc4ed93679395faa619ccc7bbbd415901ffbe2d726b52f68205ea7b5ce44d"},
-  {"tripId":"holiday-cruise-tahoe-2026","path":"readiness[0].items[1]","sha256":"6736421aa6535a1dadf78b08de193504e4ecf2715ffd96a195b9137acb4d7d40"},
-  {"tripId":"holiday-cruise-tahoe-2026","path":"cities[0].highlights[1].note","sha256":"2a2556d81b8ef5bec59b0d83d5bae8d96a50669bb80e91605680ad88f7cac214"},
+  {"tripId":"holiday-cruise-tahoe-2026","path":"readiness[0].items[1]","sha256":"0f6bc4ed93679395faa619ccc7bbbd415901ffbe2d726b52f68205ea7b5ce44d"},
+  {"tripId":"holiday-cruise-tahoe-2026","path":"readiness[0].items[2]","sha256":"6736421aa6535a1dadf78b08de193504e4ecf2715ffd96a195b9137acb4d7d40"},
+  {"tripId":"holiday-cruise-tahoe-2026","path":"cities[0].highlights[2].note","sha256":"2a2556d81b8ef5bec59b0d83d5bae8d96a50669bb80e91605680ad88f7cac214"},
   {"tripId":"holiday-cruise-tahoe-2026","path":"cities[1].hotel.amenities[7]","sha256":"4121a876f48c9fa1b4892e48bbef6830202f9fd26bab26caa5618a0700fd2dc3"},
   {"tripId":"holiday-cruise-tahoe-2026","path":"cities[1].hotel.amenities[8]","sha256":"860307ca232cc9ed743715a32fbc486ff0df50366a88a108791c78efdfce123f"},
-  {"tripId":"holiday-cruise-tahoe-2026","path":"transport[0].notes[2]","sha256":"16d12d303e3c7f0928e5f4821942a703d3bfad3c36ea0f053bdc3feebe3b8ff3"}
+  {"tripId":"holiday-cruise-tahoe-2026","path":"transport[2].notes[2]","sha256":"16d12d303e3c7f0928e5f4821942a703d3bfad3c36ea0f053bdc3feebe3b8ff3"}
 ]
