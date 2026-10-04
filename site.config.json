@@ -3,11 +3,12 @@
   "repository": "mikehammonds-rgb/travel-command-center",
   "vercelProject": "travel-command-center",
   "productionUrl": "https://mike-travel-command-center.vercel.app",
-  "version": "20260930-2",
+  "version": "20261004-1",
   "tripModules": [
     "data/archive-index.js",
     "data/active-trip.js",
     "data/november-cruise.js",
-    "data/upcoming-cruises.js"
+    "data/upcoming-cruises.js",
+    "data/summer-2027.js"
   ]
 }

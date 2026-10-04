@@ -11,6 +11,7 @@ Read this with `README.md` before changing trip content. The current root app is
 | `data/active-trip.js` | Holiday cruise and Tahoe trip |
 | `data/november-cruise.js` | November Wonder birthday cruise |
 | `data/upcoming-cruises.js` | January and February 2027 cruises |
+| `data/summer-2027.js` | June Allison birthday cruise and July/August Croatia + Paris |
 | `data/trips.js` | Generated runtime bundle; do not edit directly |
 | `index.html` | Loads the bundle and app |
 | `app.js` | Renders upcoming cards, chapters, day plans, transport, timeline, and tools |

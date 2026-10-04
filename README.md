@@ -16,6 +16,7 @@ These identifiers are also recorded in `site.config.json`. If a request names an
 - November 2026 Wonder birthday cruise: `data/november-cruise.js`
 - December 2026 holiday cruise + Tahoe: `data/active-trip.js`
 - January and February 2027 cruises: `data/upcoming-cruises.js`
+- June 2027 Allison birthday cruise and July/August Croatia + Paris: `data/summer-2027.js`
 - China 2026: `archived-trips/china-2026-08-30-to-2026-09-13/`
 
 `site.config.json` lists the ordered source modules and one release version. `scripts/prepare-release.mjs` assembles them into `data/trips.js` and synchronizes the page and service-worker versions. Edit the source modules, not the generated bundle. `app.js` renders the trips; `sw.js` caches the bundle for offline use.
