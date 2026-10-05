@@ -1,5 +1,5 @@
 (()=>{
-const BUILD='20261004-1';
+const BUILD='20261005-1';
 const trips=Array.isArray(window.TRAVEL_COMMAND_CENTER_TRIPS)&&window.TRAVEL_COMMAND_CENTER_TRIPS.length?window.TRAVEL_COMMAND_CENTER_TRIPS:[window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP].filter(Boolean);
 const requestedTrip=new URLSearchParams(location.search).get('trip');
 const selectedTrip=trips.find(trip=>trip.id===requestedTrip);
