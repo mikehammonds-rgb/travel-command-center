@@ -1,5 +1,9 @@
 # AI handoff: Seats.aero award search
 
+## Startup after the Google Drive move
+
+Work in **Google Drive → My Drive → Travel Command Center**. Read `START_HERE.md`, `WORKFLOW.md`, and `AGENTS.md` before making changes. GitHub `mikehammonds-rgb/travel-command-center` / `main` is the published source; Vercel `travel-command-center` hosts the dashboard. Drive syncing does not publish a release. Preserve local changes and compare against current GitHub `main`, because earlier connector publications may not be reflected in local Git history.
+
 ## Purpose
 
 `/api/award-search` is the Travel Command Center's server-side wrapper around the Seats.aero **cached search** API. It is appropriate for Mike's Pro account and must remain personal, non-commercial use. Do not replace it with Seats.aero Live Search: that endpoint requires a commercial agreement.
@@ -8,7 +12,7 @@
 
 - The only credential name is `SEATS_AERO_API_KEY`.
 - Set it in Vercel's Environment Variables for Production, Preview, and Development as appropriate; it is not committed to this repository.
-- For local work, place it only in the ignored `.env.local`. Never put a real value in `.env.example`, Markdown, source, browser code, a commit, a screenshot, or a chat transcript.
+- For development, use a non-synced local secret store or process environment outside the Google Drive folder. Do not store the key in project-local `.env.local`: Git ignores it, but Google Drive still syncs it. Do not run secret-pull commands that write credentials into this folder. Never put a real value in `.env.example`, Markdown, source, browser code, a commit, a screenshot, or a chat transcript.
 - The server client in `lib/seats-aero.mjs` sends it only as Seats.aero's `Partner-Authorization` request header. It must never be returned to the browser or logged.
 
 ## API contract

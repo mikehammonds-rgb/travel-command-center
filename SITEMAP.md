@@ -2,6 +2,10 @@
 
 Read this with `README.md` before changing trip content. The current root app is a reusable, multi-trip dashboard. The older China-specific implementation is preserved only in `archived-trips/` and should not be treated as the root app's runtime architecture.
 
+## Startup and maintenance guidance
+
+The working folder is **Google Drive → My Drive → Travel Command Center**, synced to the Mac. `START_HERE.md` explains workspace setup and migration safeguards; `WORKFLOW.md` owns the maintenance and publication sequence; `AGENTS.md` routes new agents to those instructions. `AI_HANDOFF.md` contains the award-search contract and secret boundary. Google Drive is not the production host or a substitute for GitHub publication.
+
 ## Runtime
 
 | Source | Purpose |
