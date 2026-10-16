@@ -41,13 +41,13 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
       tone:'ready',
       title:'Already booked',
       icon:'✓',
-      items:['Tampa to Miami flight Dec 23','Cruise fare is paid','Beverage package for two is paid','Miami to Reno flights','Reno hotel for Dec 28','Reno to Tampa return flights','Biltmore hotel for Dec 23-24','Ocean View Balcony Guarantee upgrade (XB GTY)']
+      items:['Tampa to Miami flight Dec 23','Cruise fare is paid','Beverage package for two is paid','Miami to Reno flights','Reno hotel for Dec 28','Reno to Tampa return flights','Biltmore hotel for Dec 23-24','Ocean View Balcony Guarantee upgrade (XB GTY)','Hertz rental SUV at RNO, Dec 29-Jan 1']
     },
     {
       tone:'attention',
       title:'Still to arrange',
       icon:'!',
-      items:['Watch for the guaranteed balcony cabin assignment and view details','Confirm the receipt-listed 3:00-3:30 PM EST cruise arrival window in the Royal app','Reno to Lake Tahoe transportation','Tahoe lodging for Dec 29-Jan 1','Ski mountain, lift tickets and rentals']
+      items:['Watch for the guaranteed balcony cabin assignment and view details','Confirm the receipt-listed 3:00-3:30 PM EST cruise arrival window in the Royal app','Arrange Silver Legacy-to-RNO transportation for the Dec 29 noon rental pickup','Tahoe lodging for Dec 29-Jan 1','Ski mountain, lift tickets and rentals']
     }
   ],
   days:[
@@ -57,10 +57,10 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
     {date:'2026-12-26',title:'Sea day',summary:'A full day aboard Wonder of the Seas.',items:['Beverage package active','5:00 PM dining waitlist']},
     {date:'2026-12-27',title:'Perfect Day at CocoCay',summary:'Arrive 7:00 AM and depart 5:00 PM.',items:['CocoCay','Back aboard before departure']},
     {date:'2026-12-28',title:'Ship to slopes',summary:'Arrive Miami at 6:00 AM, fly to Reno that evening and check in late.',items:['MIA-SLC-RNO','Reno arrival 11:34 PM','Silver Legacy overnight']},
-    {date:'2026-12-29',title:'Reno to Lake Tahoe',summary:'Check out by noon and continue to the Tahoe ski stay.',items:['Ground transfer to arrange','Tahoe lodging to add']},
+    {date:'2026-12-29',title:'Reno to Lake Tahoe',summary:'Check out by noon and continue to the Tahoe ski stay.',items:['Hertz pickup at RNO at noon PST','Arrange Silver Legacy-to-RNO ride','Drive rental SUV to Tahoe','Tahoe lodging to add']},
     {date:'2026-12-30',title:'Tahoe ski day',summary:'Mountain and lift plan still to be added.',items:['Lift ticket','Rental or gear plan']},
     {date:'2026-12-31',title:'New Year\'s Eve in Tahoe',summary:'Ski day and New Year celebration; plans still open.',items:['Ski plan','New Year dinner or event']},
-    {date:'2027-01-01',title:'Final ski day and fly home',summary:'Leave enough time to return to Reno airport for the 6:49 PM flight.',items:['RNO-LAX-TPA','Overnight flight']},
+    {date:'2027-01-01',title:'Final ski day and fly home',summary:'Return the Hertz SUV to RNO by 4:30 PM PST before the 6:49 PM flight.',items:['Allow extra time for winter roads and the rental return','2 hours 19 minutes from scheduled car return to flight','RNO-LAX-TPA','Overnight flight']},
     {date:'2027-01-02',title:'Arrive home',summary:'Land in Tampa at 6:58 AM.',items:['Tampa arrival']}
   ],
   cities:[
@@ -98,9 +98,9 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
       summary:'A fast New Year ski chapter, using Reno as the air gateway to Lake Tahoe.',
       days:[
         {date:'DEC 28',title:'Late Reno arrival',summary:'Land at 11:34 PM and head to Silver Legacy.',items:['Call hotel about late arrival','Airport shuttle included']},
-        {date:'DEC 29',title:'Move to Tahoe',summary:'Check out by noon; mountain transfer and Tahoe lodging are not yet in the folder.',items:['Ground transport needed','Lodging needed']},
+        {date:'DEC 29',title:'Move to Tahoe',summary:'Collect the Hertz SUV at RNO at noon PST, then drive to Tahoe. Arrange a ride from Silver Legacy to the airport; Tahoe lodging is still to add.',items:['Volvo XC90, luxury 7-passenger SUV (Z4)','RNO pickup at noon PST','Lodging needed']},
         {date:'DEC 30-31',title:'Ski and celebrate',summary:'Two full Tahoe days, including New Year\'s Eve.',items:['Choose mountain','Lift tickets','Rentals']},
-        {date:'JAN 1',title:'Ski, then return to Reno',summary:'Reno flight departs at 6:49 PM.',items:['Build in winter road time','Airport bag cutoff']}
+        {date:'JAN 1',title:'Ski, then return to Reno',summary:'Return the Hertz SUV at RNO by 4:30 PM PST; the flight departs at 6:49 PM.',items:['Build in winter road time and rental-return processing','2 hours 19 minutes before flight','Airport bag cutoff']}
       ],
       hotel:{
         name:'Silver Legacy Resort Casino',
@@ -110,7 +110,8 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
       },
       highlights:[
         {name:'Late-arrival check',note:'The inbound flight lands at 11:34 PM. Call the hotel ahead so the room is held.'},
-        {name:'Winter transfer buffer',note:'Allow extra time between Lake Tahoe and Reno airport on Jan 1.'}
+        {name:'Winter transfer buffer',note:'Allow extra time between Lake Tahoe and Reno airport on Jan 1. Hertz return is 4:30 PM PST, 2 hours 19 minutes before the 6:49 PM flight; allow time for return processing, bags and security.'},
+        {name:'Rental SUV confirmed',note:'Hertz confirmation received October 16: Volvo XC90, luxury 7-passenger SUV (Z4). RNO pickup Dec 29 at noon; RNO return Jan 1 at 4:30 PM. Times are PST / America/Los_Angeles. Verify winter equipment and cancellation terms with Hertz; these details were not established by the confirmation.'}
       ]
     }
   ],
@@ -120,7 +121,7 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
     {type:'cruise',icon:'🚢',date:'DEC 24-28',title:'Wonder of the Seas',details:'Miami - Nassau - sea day - Perfect Day at CocoCay - Miami',notes:['4 nights','Check-in 3:00-3:30 PM EST per October 16 receipt; confirm in Royal app','Paid in full','Ocean View Balcony Guarantee (XB GTY); cabin assignment and view details pending']},
     {type:'flight',date:'DEC 28',title:'Miami to Reno',details:'Delta 973: MIA 6:25 PM - SLC 9:46 PM; Delta 1607: SLC 10:59 PM - RNO 11:34 PM',notes:['One stop in Salt Lake City','Two checked bags shown as included']},
     {type:'hotel',date:'DEC 28-29',title:'Silver Legacy Resort Casino',details:'One-night premium king stay in downtown Reno.',notes:['Late arrival','Airport shuttle','Check-out by noon']},
-    {type:'transfer',date:'DEC 29',title:'Reno to Lake Tahoe',details:'Ground transportation is not yet in the Gmail folder.',notes:['Needs booking','Plan for winter conditions']},
+    {type:'rental',icon:'🚗',date:'DEC 29-JAN 1',title:'Hertz rental SUV - RNO',details:'Confirmed Volvo XC90, luxury 7-passenger SUV (Z4). Pick up at Reno-Tahoe International Airport Dec 29, 2026 at noon PST; return to the same airport Jan 1, 2027 at 4:30 PM PST (America/Los_Angeles).',notes:['Arrange Silver Legacy-to-RNO ride before pickup','Use rental SUV for Reno-Tahoe travel','Confirm winter equipment and cancellation terms with Hertz','Return is 2 hours 19 minutes before the 6:49 PM flight']},
     {type:'hotel',date:'DEC 29-JAN 1',title:'Lake Tahoe lodging',details:'No Tahoe hotel or vacation rental was found in the Gmail folder.',notes:['Needs booking']},
     {type:'flight',date:'JAN 1-2',title:'Reno to Tampa',details:'United 2397: RNO 6:49 PM - LAX 8:22 PM; United 2372: LAX 11:15 PM - TPA 6:58 AM next day',notes:['One stop in Los Angeles','Overnight arrival']}
   ],
@@ -135,8 +136,9 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
     {icon:'🏖️',date:'DEC 27 · 7:00 AM-5:00 PM',title:'Perfect Day at CocoCay',details:'Private island port day.'},
     {icon:'✈️',date:'DEC 28 · 6:25 PM',title:'Fly Miami to Reno',details:'Connect in Salt Lake City and land in Reno at 11:34 PM.'},
     {icon:'🏨',date:'DEC 28 · LATE',title:'Silver Legacy check-in',details:'One night in Reno; call ahead because arrival is after 11:30 PM.'},
-    {icon:'🏔️',date:'DEC 29',title:'Transfer to Lake Tahoe',details:'Check out by noon and begin the ski chapter.'},
+    {icon:'🚗',date:'DEC 29 · NOON PST',title:'Pick up Hertz SUV at RNO',details:'Arrange a ride from Silver Legacy to Reno-Tahoe International Airport before noon. Collect the reserved Volvo XC90 luxury 7-passenger SUV (Z4), then drive to Lake Tahoe.'},
     {icon:'⛷️',date:'DEC 30-31',title:'Tahoe ski days',details:'Mountain, tickets and rentals still to be selected.'},
+    {icon:'🚗',date:'JAN 1 · 4:30 PM PST',title:'Return Hertz SUV at RNO',details:'Return to Reno-Tahoe International Airport. Allow for winter roads, rental-return processing, bags and security before the 6:49 PM flight.'},
     {icon:'✈️',date:'JAN 1 · 6:49 PM',title:'Fly Reno to Tampa',details:'Connect in Los Angeles and arrive in Tampa Jan 2 at 6:58 AM.'}
   ],
   support:[
