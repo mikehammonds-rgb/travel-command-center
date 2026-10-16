@@ -41,18 +41,18 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
       tone:'ready',
       title:'Already booked',
       icon:'✓',
-      items:['Tampa to Miami flight Dec 23','Cruise fare is paid','Beverage package for two is paid','Miami to Reno flights','Reno hotel for Dec 28','Reno to Tampa return flights','Biltmore hotel for Dec 23-24']
+      items:['Tampa to Miami flight Dec 23','Cruise fare is paid','Beverage package for two is paid','Miami to Reno flights','Reno hotel for Dec 28','Reno to Tampa return flights','Biltmore hotel for Dec 23-24','Ocean View Balcony Guarantee upgrade (XB GTY)']
     },
     {
       tone:'attention',
       title:'Still to arrange',
       icon:'!',
-      items:['Reno to Lake Tahoe transportation','Tahoe lodging for Dec 29-Jan 1','Ski mountain, lift tickets and rentals']
+      items:['Watch for the guaranteed balcony cabin assignment and view details','Confirm the receipt-listed 3:00-3:30 PM EST cruise arrival window in the Royal app','Reno to Lake Tahoe transportation','Tahoe lodging for Dec 29-Jan 1','Ski mountain, lift tickets and rentals']
     }
   ],
   days:[
     {date:'2026-12-23',title:'Fly Tampa to Miami',summary:'American Airlines AA 783 departs Tampa at 7:00 AM and arrives Miami at 8:19 AM. Both times are Eastern Standard Time. Take an Uber to the Biltmore in Coral Gables for the overnight stay.',items:['Nonstop flight','First Class','Check in and drop bags with American Airlines','Seat assigned on travel day','Biltmore check-in 4:00 PM; noon early check-in if available','Uber from Miami airport to hotel; request on arrival']},
-    {date:'2026-12-24',title:'Embark in Miami',summary:'Take an Uber from the Biltmore to the Miami cruise terminal. Cruise check-in window is noon-3:00 PM; Wonder of the Seas departs at 4:30 PM.',items:['Plan hotel departure around noon; standard check-out is noon','Uber to cruise terminal; request when ready','Board by 3:00 PM','Interior stateroom']},
+    {date:'2026-12-24',title:'Embark in Miami',summary:'Take an Uber from the Biltmore to the Miami cruise terminal. The October 16 receipt lists cruise check-in at 3:00-3:30 PM EST; Wonder of the Seas departs at 4:30 PM.',items:['Plan hotel departure around noon; standard check-out is noon','Uber to cruise terminal; request when ready','Receipt check-in window: 3:00-3:30 PM EST; confirm in Royal app','Ocean View Balcony Guarantee (XB GTY); cabin assignment pending']},
     {date:'2026-12-25',title:'Christmas in Nassau',summary:'Arrive 7:30 AM and depart 5:30 PM.',items:['Nassau','Back aboard before departure']},
     {date:'2026-12-26',title:'Sea day',summary:'A full day aboard Wonder of the Seas.',items:['Beverage package active','5:00 PM dining waitlist']},
     {date:'2026-12-27',title:'Perfect Day at CocoCay',summary:'Arrive 7:00 AM and depart 5:00 PM.',items:['CocoCay','Back aboard before departure']},
@@ -71,7 +71,7 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
       summary:'A four-night Bahamas and Perfect Day holiday sailing from Miami.',
       days:[
         {date:'DEC 23',title:'Fly to Miami and stay at the Biltmore',summary:'AA 783: Tampa 7:00 AM to Miami 8:19 AM, nonstop. Both times EST. Hotel check-in 4:00 PM; noon early check-in if available.',items:['First Class','Check in with American Airlines','Superior Room, 2 Queen Beds','Uber from airport to Biltmore']},
-        {date:'DEC 24',title:'Miami embarkation',summary:'Leave the Biltmore around noon for cruise check-in noon-3:00 PM; depart 4:30 PM.',items:['Uber from Biltmore to cruise terminal','Wonder of the Seas','Interior stateroom']},
+        {date:'DEC 24',title:'Miami embarkation',summary:'Leave the Biltmore around noon for the receipt-listed 3:00-3:30 PM EST cruise check-in; depart 4:30 PM.',items:['Uber from Biltmore to cruise terminal','Wonder of the Seas','Ocean View Balcony Guarantee (XB GTY); cabin assignment pending']},
         {date:'DEC 25',title:'Nassau',summary:'7:30 AM-5:30 PM port call.',items:['Christmas Day']},
         {date:'DEC 26',title:'Cruising',summary:'Full sea day.',items:['Beverage package for two']},
         {date:'DEC 27',title:'Perfect Day at CocoCay',summary:'7:00 AM-5:00 PM port call.',items:['Private island day']},
@@ -87,7 +87,8 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
         {name:'Before the cruise',note:'Biltmore overnight stay is confirmed for Dec 23-24. Uber is planned for airport-to-hotel and hotel-to-cruise-terminal rides; request rides when ready. The 8:19 AM flight arrival is before hotel check-in; ask about luggage storage or early check-in.'},
         {name:'Dining',note:'5:00 PM seating is currently waitlisted.'},
         {name:'Beverage package',note:'Deluxe Beverage Package for two is confirmed and paid.'},
-        {name:'Royal app check-in',note:'Complete check-in and choose an arrival time before sailing.'}
+        {name:'Royal app check-in',note:'Complete check-in and choose an arrival time before sailing.'},
+        {name:'Stateroom upgrade',note:'Ocean View Balcony Guarantee, category XB GTY, confirmed by the October 16, 2026 receipt. Cabin number, deck and obstructed-view percentage are pending assignment.'}
       ]
     },
     {
@@ -116,7 +117,7 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
   transport:[
     {type:'flight',date:'DEC 23',title:'Tampa to Miami',details:'American Airlines AA 783: TPA 7:00 AM - MIA 8:19 AM (both EST / America/New_York), nonstop.',notes:['Confirmed flight','First Class','Booked through Alaska Airlines; operated by American Airlines','Check in and drop bags with American Airlines','Seat assigned on travel day']},
     {type:'hotel',date:'DEC 23-24',title:'The Biltmore Hotel Miami - Coral Gables',details:'Confirmed one-night stay at 1200 Anastasia Ave, Coral Gables, FL 33134. Superior Room, 2 Queen Beds, for two guests.',notes:['Check-in 4:00 PM EST; noon early check-in if available','Standard check-out noon; Amex late check-out benefit is 4:00 PM, but leave earlier for cruise boarding','Amex Fine Hotels + Resorts: breakfast for two, eligible property credit and Wi-Fi; upgrade if available','Non-refundable stay','Uber planned: Miami airport to Biltmore Dec 23, Biltmore to cruise terminal Dec 24; not pre-booked']},
-    {type:'cruise',icon:'🚢',date:'DEC 24-28',title:'Wonder of the Seas',details:'Miami - Nassau - sea day - Perfect Day at CocoCay - Miami',notes:['4 nights','Check-in noon-3:00 PM','Paid in full']},
+    {type:'cruise',icon:'🚢',date:'DEC 24-28',title:'Wonder of the Seas',details:'Miami - Nassau - sea day - Perfect Day at CocoCay - Miami',notes:['4 nights','Check-in 3:00-3:30 PM EST per October 16 receipt; confirm in Royal app','Paid in full','Ocean View Balcony Guarantee (XB GTY); cabin assignment and view details pending']},
     {type:'flight',date:'DEC 28',title:'Miami to Reno',details:'Delta 973: MIA 6:25 PM - SLC 9:46 PM; Delta 1607: SLC 10:59 PM - RNO 11:34 PM',notes:['One stop in Salt Lake City','Two checked bags shown as included']},
     {type:'hotel',date:'DEC 28-29',title:'Silver Legacy Resort Casino',details:'One-night premium king stay in downtown Reno.',notes:['Late arrival','Airport shuttle','Check-out by noon']},
     {type:'transfer',date:'DEC 29',title:'Reno to Lake Tahoe',details:'Ground transportation is not yet in the Gmail folder.',notes:['Needs booking','Plan for winter conditions']},
@@ -127,8 +128,8 @@ window.TRAVEL_COMMAND_CENTER_ACTIVE_TRIP={
     {icon:'✈️',date:'DEC 23 · 7:00-8:19 AM EST',title:'Fly Tampa to Miami',details:'Confirmed nonstop American Airlines AA 783 in First Class. Check in and drop bags with American Airlines.'},
     {icon:'🚘',date:'DEC 23 · AFTER ARRIVAL',title:'Uber to the Biltmore',details:'Request an Uber from Miami airport to the Biltmore in Coral Gables after landing and collecting bags. Ride is planned, not pre-booked.'},
     {icon:'🏨',date:'DEC 23 · 4:00 PM EST',title:'Biltmore check-in',details:'Confirmed Dec 23-24 stay in Coral Gables: Superior Room, 2 Queen Beds. Noon early check-in is subject to availability.'},
-    {icon:'🚘',date:'DEC 24 · AROUND NOON',title:'Uber from Biltmore to cruise terminal',details:'Standard hotel check-out is noon. Request an Uber around noon for the noon-3:00 PM cruise check-in window. Ride is planned, not pre-booked. Do not wait for the 4:00 PM late check-out benefit.'},
-    {icon:'🚢',date:'DEC 24 · 12:00-3:00 PM',title:'Cruise check-in',details:'Board Wonder of the Seas in Miami before the 4:30 PM departure.'},
+    {icon:'🚘',date:'DEC 24 · AROUND NOON',title:'Uber from Biltmore to cruise terminal',details:'Standard hotel check-out is noon. Request an Uber around noon and confirm terminal arrival against the receipt-listed 3:00-3:30 PM EST check-in window in the Royal app. Ride is planned, not pre-booked. Do not wait for the 4:00 PM late check-out benefit.'},
+    {icon:'🚢',date:'DEC 24 · 3:00-3:30 PM EST',title:'Cruise check-in',details:'October 16 receipt lists check-in at 3:00-3:30 PM EST. Confirm arrival time in the Royal app; Wonder of the Seas departs Miami at 4:30 PM.'},
     {icon:'🏝️',date:'DEC 25 · 7:30 AM-5:30 PM',title:'Nassau',details:'Christmas Day port call.'},
     {icon:'🌊',date:'DEC 26',title:'Sea day',details:'Full day aboard.'},
     {icon:'🏖️',date:'DEC 27 · 7:00 AM-5:00 PM',title:'Perfect Day at CocoCay',details:'Private island port day.'},
