@@ -1,10 +1,11 @@
-# Travel Command Center agent startup
+# Legacy source retained for recovery
 
-- Canonical working folder: Google Drive → My Drive → Travel Command Center. Read `START_HERE.md` and `WORKFLOW.md` before task actions, then `README.md` and `SITEMAP.md` for app boundaries.
-- Verify `site.config.json` and Git remote: `mikehammonds-rgb/travel-command-center`; hosting project `travel-command-center`; live URL `https://mike-travel-command-center.vercel.app`. This is not Club Royale Offer Compass.
-- Preserve existing changes. Compare with current GitHub `main` before publication: connector-published changes may already be live even if local Git status is dirty. Never force-push or bulk-publish unrelated files.
-- Read `TRIP_SCHEMA.md` for itinerary changes and `AI_HANDOFF.md` for award-search changes. Edit source modules, not generated `data/trips.js`; preserve all other trips and archives.
-- Google Drive sync does not publish the website. Follow the approved GitHub/Vercel workflow and verify the exact deployed commit when a release is required.
-- Do not store credentials or private booking inputs anywhere in this synced source folder. Git ignore does not prevent Drive syncing. Keep private information out of the public GitHub repository; preserve only the owner's documented `publicTravelParty` exception.
-- Run `npm test` and `npm run check` for changes. Do not bump the runtime release for documentation-only edits.
-- Do not book, cancel, check in, contact travel providers, change access protection, or delete recovery copies without explicit authorization.
+Travel Command Center moved to Sites on October 27, 2026.
+
+Primary dashboard: https://mike-travel-command-center.the-unlimite-3666.chatgpt.site
+
+Do not use this repository, its Vercel deployment, or the retired Google Drive/local working folders for ongoing edits. Code changes belong in the Site's managed Git repository; itinerary changes belong in its private D1 database through the Travel Command Center tools.
+
+The complete pre-cutover source remains at branch `archive/pre-sites-2026-10-27`, commit `17b2781a22f9c5d7931dcd918ae7832ce0d865f9`. Other existing branches remain intact. Private local worktrees, branches, stash and untracked patches were preserved separately before cleanup.
+
+For current startup, maintenance, source-map and recovery instructions, open the Sites-managed repository and read START_HERE.md, WORKFLOW.md, SITEMAP.md, AGENTS.md and CUTOVER.md. Do not synchronize archived source over current Sites data or code.

@@ -1,40 +1,11 @@
-# Travel Command Center site map
+# Legacy source retained for recovery
 
-Read this with `README.md` before changing trip content. The current root app is a reusable, multi-trip dashboard. The older China-specific implementation is preserved only in `archived-trips/` and should not be treated as the root app's runtime architecture.
+Travel Command Center moved to Sites on October 27, 2026.
 
-## Startup and maintenance guidance
+Primary dashboard: https://mike-travel-command-center.the-unlimite-3666.chatgpt.site
 
-The working folder is **Google Drive → My Drive → Travel Command Center**, synced to the Mac. `START_HERE.md` explains workspace setup and migration safeguards; `WORKFLOW.md` owns the maintenance and publication sequence; `AGENTS.md` routes new agents to those instructions. `AI_HANDOFF.md` contains the award-search contract and secret boundary. Google Drive is not the production host or a substitute for GitHub publication.
+Do not use this repository, its Vercel deployment, or the retired Google Drive/local working folders for ongoing edits. Code changes belong in the Site's managed Git repository; itinerary changes belong in its private D1 database through the Travel Command Center tools.
 
-## Runtime
+The complete pre-cutover source remains at branch `archive/pre-sites-2026-10-27`, commit `17b2781a22f9c5d7931dcd918ae7832ce0d865f9`. Other existing branches remain intact. Private local worktrees, branches, stash and untracked patches were preserved separately before cleanup.
 
-| Source | Purpose |
-| --- | --- |
-| `site.config.json` | Exact app identity, release version, and ordered trip source modules |
-| `data/archive-index.js` | Share-safe archived-trip cards |
-| `data/active-trip.js` | Holiday cruise and Tahoe trip |
-| `data/november-cruise.js` | November Wonder birthday cruise |
-| `data/upcoming-cruises.js` | January and February 2027 cruises |
-| `data/summer-2027.js` | June Allison birthday cruise and July/August Croatia + Paris |
-| `data/trips.js` | Generated runtime bundle; do not edit directly |
-| `index.html` | Loads the bundle and app |
-| `app.js` | Renders upcoming cards, chapters, day plans, transport, timeline, and tools |
-| `sw.js` | Caches the bundle and core app for offline use |
-| `scripts/prepare-release.mjs` | Rebuilds the bundle and synchronizes build versions |
-| `scripts/validate-trip.mjs` | Validates every upcoming trip and flags privacy concerns |
-| `privacy-baseline.json` | Fingerprints unchanged older price/payment text; new occurrences fail validation |
-| `scripts/check-release.mjs` | Runs consistency, validation, syntax, and whitespace checks |
-| `.github/workflows/validate.yml` | Repeats the release check on pull requests and `main` pushes |
-
-## Impact checklist
-
-- A trip fact may appear in `days`, `cities[].days`, `phases`, `readiness`, `transport`, and `timeline`. Search the source module and keep all presentations consistent.
-- A new trip module belongs in the ordered `tripModules` list in `site.config.json`; never add a separate script tag or offline cache entry for each trip. Rebuild `data/trips.js` instead.
-- A content release increments only `site.config.json`'s version by hand. The preparation script updates `index.html`, `app.js`, and `sw.js` together.
-- `scripts/check-release.mjs` must pass before publication. Unchanged legacy privacy warnings still require review; new price/payment wording fails validation.
-- Verify the exact GitHub commit appears in Vercel's `travel-command-center` production deployment. Then inspect each changed trip card, expanded chapter, day plan, transport/timeline, and offline refresh.
-- The Vercel site may be sign-in protected, but the GitHub source is public. Keep private booking information out of both.
-
-## Publication boundary
-
-Publishing this app means the `mikehammonds-rgb/travel-command-center` repository's `main` branch and the Vercel project `travel-command-center`. Club Royale Offer Compass is a separate app and repository. A Git push is not itself proof of deployment: check Vercel's deployment state and the live site.
+For current startup, maintenance, source-map and recovery instructions, open the Sites-managed repository and read START_HERE.md, WORKFLOW.md, SITEMAP.md, AGENTS.md and CUTOVER.md. Do not synchronize archived source over current Sites data or code.
